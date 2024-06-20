@@ -11,10 +11,10 @@ import OSLog
 open class Debug {
     // MARK: - Static Properties
     /// Holds any logs that are built when they are first called.
-    private static var logs:[String:Logger] = [:]
+    private nonisolated(unsafe) static var logs:[String:Logger] = [:]
     
     /// Holds the last message that was saved when the `log` function is called. This is used to suppress duplicates.
-    private static var lastMessage:String = ""
+    private nonisolated(unsafe) static var lastMessage:String = ""
     
     // MARK: Static Functions
     /// Finds the given log by `subsystem` and `category`. If an existing log does not exist, a new one is created and saved to the collection.
