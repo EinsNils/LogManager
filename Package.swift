@@ -19,7 +19,11 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "LogManager",
-            resources: [.process("Resources")]),
+            resources: [.process("Resources")],
+            swiftSettings: [
+                .swiftLanguageVersion(.v6)
+            ]
+        ),
         .testTarget(
             name: "LogManagerTests",
             dependencies: ["LogManager"]),
