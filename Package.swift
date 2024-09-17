@@ -7,7 +7,7 @@ import PackageDescription
 
 let package = Package(
     name: "LogManager",
-    platforms: [.iOS(.v18), .macOS(.v15), .tvOS(.v18), .watchOS(.v11)],
+    platforms: [.iOS(.v17), .macOS(.v15), .tvOS(.v18), .watchOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -21,7 +21,7 @@ let package = Package(
             name: "LogManager",
             resources: [.process("Resources")],
             swiftSettings: [
-                .swiftLanguageVersion(.v6)
+                .swiftLanguageMode(.v6)
             ]
         ),
         .testTarget(
